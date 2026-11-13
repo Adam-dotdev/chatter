@@ -1,0 +1,79 @@
+/* ==========================================================================
+   1. CSS VARIABLES (DESIGN TOKENS)
+   Inspect your Figma file and fill in the exact values!
+   ========================================================================== */
+:root {
+  /* Colors */
+  --color-primary: #543ee0;       /* The brand purple (logo, CTA buttons) - grab exact hex from Figma */
+  --color-primary-hover: ;       /* Darker shade for hover state */
+  --color-text-main: ;           /* Main dark text color (headings, body) */
+  --color-text-muted: ;          /* Subdued / secondary text color (links, subtitles) */
+  --color-bg-white: #ffffff;      /* White background */
+  --color-bg-cream: ;            /* Warm light beige/cream tint seen in testimonial / footer sections */
+  --color-border: ;              /* Border color for buttons like "Log in" or card outlines */
+
+  /* Typography */
+  --font-family-base: sans-serif; /* Replace with Figma font (e.g. 'Inter', 'DM Sans') */
+
+  /* Spacing & Layout */
+  --container-max-width: 1200px; /* Check the grid container width in Figma */
+  --radius-sm: ;                 /* Border radius for buttons / inputs */
+  --radius-md: ;                 /* Border radius for cards */
+  --transition-speed: 0.2s ease;
+}
+
+/* ==========================================================================
+   2. GENERAL RESET
+   A standard modern CSS reset to ensure consistent cross-browser styling
+   ========================================================================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family-base);
+  color: var(--color-text-main);
+  background-color: var(--color-bg-white);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+/* ==========================================================================
+   3. NAVBAR STYLES
+   Write your navbar classes and styles below!
+   ========================================================================== */
