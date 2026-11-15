@@ -77,3 +77,51 @@ ol {
    3. NAVBAR STYLES
    Write your navbar classes and styles below!
    ========================================================================== */
+.navbar {
+  max-width: var(--container-max-width);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0, auto;
+  border-bottom: 10px;
+
+}
+
+.navlink {
+  display: flex;
+  gap: 24px;
+  text-decoration: none;
+  color: var(--color-text-muted);
+}
+.navlink:hover {
+  transition: ;  /* I do not know how to do it but what i want to do is make it pop out a little  */
+}
+
+a p {
+  color: var(--color-primary);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.cta {
+  display: flex;
+  gap: 2px;
+}
+
+.btn {
+  border-radius: 8px;
+  padding: 4px 16px;
+  border: 1px solid var(--color-primary);
+  cursor: pointer
+}
+
+.btn_bl {
+  background-color: var(--color-primary);
+  color: #ffffff;
+
+}
+
+.btn_ntr {
+  background-color: transparent;
+  
+}
