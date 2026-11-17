@@ -5,20 +5,18 @@
 :root {
   /* Colors */
   --color-primary: #543ee0;       /* The brand purple (logo, CTA buttons) - grab exact hex from Figma */
-  --color-primary-hover: ;       /* Darker shade for hover state */
-  --color-text-main: ;           /* Main dark text color (headings, body) */
-  --color-text-muted: ;          /* Subdued / secondary text color (links, subtitles) */
+  --color-primary-hover:#4332cf;       /* Darker shade for hover state */
+  --color-text-main: #111111;           /* Main dark text color (headings, body) */
+  --color-text-muted: #626262;          /* Subdued / secondary text color (links, subtitles) */
   --color-bg-white: #ffffff;      /* White background */
-  --color-bg-cream: ;            /* Warm light beige/cream tint seen in testimonial / footer sections */
-  --color-border: ;              /* Border color for buttons like "Log in" or card outlines */
 
+  --color-bg-cream: rgba(255, 237, 204, 0.5);            /* Warm light beige/cream tint seen in testimonial / footer sections */
   /* Typography */
-  --font-family-base: sans-serif; /* Replace with Figma font (e.g. 'Inter', 'DM Sans') */
+  --font-family-base: "DM Sans", sans-serif; /* Replace with Figma font (e.g. 'Inter', 'DM Sans') */
 
   /* Spacing & Layout */
-  --container-max-width: 1200px; /* Check the grid container width in Figma */
-  --radius-sm: ;                 /* Border radius for buttons / inputs */
-  --radius-md: ;                 /* Border radius for cards */
+  --container-max-width: 1336px; /* 1440 frame with 72px side margins (incl. 20px padding) */
+  
   --transition-speed: 0.2s ease;
 }
 
@@ -73,57 +71,72 @@ ol {
   list-style: none;
 }
 
-/* ==========================================================================
-   3. NAVBAR STYLES
-   Write your navbar classes and styles below!
-   ========================================================================== */
+/* ==== NAVBAR STYLES ==== */
+header {
+  border-bottom: 1px solid #e2e8f0;
+}
+
 .navbar {
   max-width: var(--container-max-width);
+  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0, auto;
-  border-bottom: 10px;
-
+  padding: 20px;
 }
 
 .navlink {
   display: flex;
   gap: 24px;
-  text-decoration: none;
-  color: var(--color-text-muted);
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--color-text-main);
 }
-.navlink:hover {
-  transition: ;  /* I do not know how to do it but what i want to do is make it pop out a little  */
+.navlink a {
+  display: inline-block;
+  transition: transform var(--transition-speed),
+    color var(--transition-speed);
+}
+.navlink a:hover {
+  color: var(--color-primary);
+  transform: scale(1.1);
 }
 
-a p {
+.logo a p {
   color: var(--color-primary);
+  font-size: 48px;
+  font-weight: 500;
+  line-height: 1;
   text-transform: uppercase;
-  letter-spacing: 2px;
 }
 
 .cta {
   display: flex;
-  gap: 2px;
+  gap: 24px;
 }
 
 .btn {
   border-radius: 8px;
-  padding: 6px 24px;
+  min-width: 156px;
+  padding: 16px 24px;
   border: 1px solid var(--color-primary);
+  font-size: 16px;
+  font-weight: 500;
   cursor: pointer;
+  transition: background-color var(--transition-speed);
 }
 
 .btn_bl {
   background-color: var(--color-primary);
   color: #ffffff;
-
+}
+.btn_bl:hover {
+  background-color: var(--color-primary-hover);
 }
 
 .btn_ntr {
   background-color: transparent;
-  
+  color: var(--color-text-main);
 }
 
 /* ===== HERO SECTION ===== */
@@ -138,29 +151,230 @@ a p {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 40px;
   align-items: flex-start;
-  min-height: 80vh;
+  min-height: 765px;
   background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url("./images/unsplash_-2vD8lIhdnw.png");  
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
+.hero .container {
+  padding-left: 176px;
+}
+
 .hero h1{
   color: white;
-  font-weight: bold;
-  font-size: 2.5rem;
-  max-width: 600px;
-  line-height: 1.2;
+  font-weight: 500;
+  font-size: 3rem;
+  max-width: 900px;
+  line-height: 1.5;
 }
 
 .hero p {
-  font-size: 18px;
+  font-size: 22px;
   color: white;
   margin-top: 16px;
   margin-bottom: 24px;
-  max-width: 600px;
+  max-width: 700px;
   opacity: 0.9;
+}
+/* ==== ABOUT CHATTER SECTION */
+.about {
+  padding: 80px 0;
+}
+.about .container{
+  
+  display: flex;
+  gap: 48px;
+  align-items: center;
+}
+.about-text {
+  flex: 1;
+}
+.about .container {
+  padding-right: 45px;
+}
+.about-img {
+  flex: 0 0 500px;
+}
+.about-img img {
+  border-radius: 12px;
+  width: 100%; 
+  height: auto; 
+  object-fit: cover;
+
+}
+.about h2 {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+.about p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* ==== Why you should join chatter ==== */
+.why {
+  padding: 80px 0;
+}
+.why-container{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 48px;
+  max-width: 1040px;
+  margin: 0 auto;
+}
+
+.why h2{
+  text-align: center;
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+.why-paragraph {
+  max-width: 1040px;
+  text-align: left;
+  font-size: 16px;
+  margin: 0 auto 48px auto;
+}
+.why-card{
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 32px 24px;
+  text-align: left;  
+  border: 1px solid #e2e8f0;
+}
+.why-card img {
+  margin-bottom: 16px;
+}
+.why-card h4 {
+  font-size: 22px;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+.why-card p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--color-text-muted);
+  margin-bottom: 16px;
+}
+/* ===== TESTIMONIAL SECTION ===== */
+
+.testimonial {
+  background-color: var(--color-bg-cream);
+  padding: 96px 40px;
+  text-align: left;
+}
+.testimonial-container{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 64px;
+}
+
+.testimonial img{
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.testimonial p{
+  font-size: 16px;
+  margin-bottom: 20px;
+  max-width: 920px;
+  margin-right: auto;
+  line-height: 1.6;
+}
+.testim h4 {
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-weight: 500;
+}
+.testim h4 span {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+/* ==== COMMUNITY SECTION === */
+.community {
+  padding: 80px 0;
+  text-align: left;
+}
+.community-container{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 64px;
+}
+.community-avatars {
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 494px;
+  padding-left: 86px;
+}
+.community-avatars img {
+  width: 154px;
+  height: 154px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+.community-avatars img + img {
+  margin-top: -27px;
+}
+.community-avatars img:nth-child(2){
+  transform: translateX(200px);
+}
+.community-content {
+  flex: 1;
+}
+.community-content h2 {
+  font-size: 48px;
+  font-weight: 500;
+  line-height: 1.25;
+  max-width: 640px;
+  margin-bottom: 20px;
+}
+.community-content p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 28px;
+  max-width: 600px;
+  color: var(--color-text-muted);
+}
+
+/* ==== FOOTER STYLES ==== */
+.footer {
+  background-color: var(--color-bg-cream);
+  padding: 80px 0;
+  min-height: 400px;
+}
+.footer-container{
+  display: grid;
+  grid-template-columns: 440px 331px 343px 1fr;
+  column-gap: 0;
+}
+footer h4 {
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-weight: 500;
+}
+.footer ul {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.footer li a {
+  color: var(--color-text-main);
+  transition: color var(--transition-speed) ;
+}
+.footer li a:hover {
+  color: var(--color-primary);
 }
 
